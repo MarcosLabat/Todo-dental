@@ -1,0 +1,915 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: #333333;
+}
+
+li{
+    list-style: none;
+}
+
+.a{
+    font-size: 60px;
+}
+
+
+header .menu{
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: repeat(14, minmax(auto-fit, 1fr));
+    position: fixed;
+    z-index: 400;
+    background-color: #fff;
+    width: 100%;
+}
+
+.logo{
+    cursor: pointer;
+    grid-column: 1 / 5;
+    width: 300px;
+    margin-left: 20px;
+}
+
+.lista-menu{
+    grid-column:  7 / 13;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    transition: opacity 1.3s;
+    text-transform: uppercase;
+    width: 90%;
+    transition: transform .5s ease;
+}
+
+.menu-lista{
+    padding: 0 15px;
+}
+/** Barras del menu y del Sub menu **/
+.menu-lista,
+.sub-item{
+    position: relative;
+    z-index: 100;
+}
+
+.menu-lista::after,
+.sub-item::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #1e4cf3;
+    transition: width .3s;
+}
+.menu-lista::after{
+    top: 25px;
+    left: 14px;
+}
+
+.sub-item::after{
+    top: 35px;
+    left: 10px;
+}
+
+.menu-lista:hover::after,
+.sub-item:hover::after{
+    width: calc(100% - 30px);
+}
+
+
+/** Sub menu **/
+
+.sub-menu{
+    position: absolute;
+    visibility: hidden;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.sub-item{
+    display: block;
+    padding: 10px;
+}
+
+.menu-lista:hover .sub-menu{
+    visibility: visible;
+    opacity: 1;
+}
+
+/** Imagen de fondo **/
+
+
+
+.textos{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+}
+
+.textos::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, .70)0%, rgba(0, 0, 0, 0.68)100%); 
+    background-attachment: fixed;
+}
+
+.textos img{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}   
+
+.contenedor-texto{
+    position: absolute;
+    top: 55%;
+    left: 15%;
+    
+}
+
+.texto{
+    font-size: 45px;
+    margin-bottom: 10px;
+    color: #1fc7ff;
+}
+
+.sub-texto{
+    font-weight: 300;
+    font-size: 20px;
+    color: #aaa;
+}
+
+.indicados{
+    color: #d3d3d3;
+}
+
+/** Sobre Nostros **/
+
+.nosotros{
+    margin: 20px 0;
+    background-color: #f3f3f3;
+}
+
+.titulo-seccion{
+    text-align: center;
+    padding: 25px  0;
+    font-size: 50px;
+    color: #14acec;
+}
+
+.contenedor-nosotros{
+    display: grid;
+    grid-template-columns: repeat(10, minmax(100px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    justify-items: center;
+    font-size: 22px; 
+    width: 100%;
+    
+}
+
+.nombre{
+    font-weight: 700;
+    color: #14acec;
+}
+
+.nostros-principal{
+    margin: 15px 0;
+    font-weight: 400;
+    font-size: 25px;
+    text-align: center;
+}
+
+.card-1,
+.card-2{
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: #afafaf  2px 2px 10px 0;
+    border-radius: 30px;
+    transition: transform .5s, box-shadow.5s ;
+}
+
+.card-1:hover,
+.card-2:hover,
+.trata:hover{
+   transform: translateY(-5%);
+   box-shadow: #787878  5px 5px 15px 0;
+}
+
+
+.card-1 img,
+.card-2 img{
+    width: 80px;
+}
+
+.card-1{
+    width: 100%;
+    grid-column: 2 / 6;
+}
+
+.card-2{
+    width: 100%;
+    grid-column: 6 / 10;
+}
+
+
+
+.objetivo,
+.equipo{
+    font-size: 40px;
+    color: #0ca9cc;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+
+.descrpcion{
+    line-height: 30px;
+    max-width: 90%;
+    text-align: center;
+    color: #2a363b;
+    margin: 10px ;
+    padding: 5px;
+    font-size: 18px;
+}
+
+/** Que ofrecemos **/
+
+.ofrecemos{
+    width: 100%;
+    height: 50vh;
+    background-image:linear-gradient(rgba(0, 0, 0, .70)0%, rgba(0, 0, 0, .70)100%), url(../Imagenes/imagen-2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+.ofrecemos img{
+    width: 70px;
+}
+
+.contenedor-ofrecemos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.texto-ofrecemos{
+    color: #fff;
+    font-size: 1.875rem;
+    font-weight: 400;
+}
+
+.contendor-local,
+.contenedor-material,
+.contenedor-precio{
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+.texto-local,
+.texto-materiales,
+.texto-precio{
+    color: #f2f2f2;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+/** Tratamientos **/
+
+
+
+.contenedor-trata{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background-color: #f3f3f3;
+    gap: 15px;
+    font-size: 23px;
+}
+
+.contenedor-trata div:first-child,
+.contenedor-trata div:nth-child(4){
+    grid-column: 1 / 3;
+}
+
+.contenedor-trata div:nth-child(2),
+.contenedor-trata div:nth-child(5){
+    grid-column: 3 / 5;
+}
+
+.contenedor-trata div:nth-child(3),
+.contenedor-trata div:last-child{
+    grid-column: 5 / 7;
+}
+
+/** CARDS DE LOS TRATAMIENTOS **/
+.tratamientos{
+    background-color: #f3f3f3;
+    margin: 40px 0;
+}
+
+.trata{
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: #787878  5px 5px 15px 0;
+    border-radius: 30px;
+    transition: transform .5s, box-shadow .5s;
+}
+
+.trata-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tratamiento{
+    text-align: center;
+    color: #0ca9cc;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+
+
+.img-trata{
+    width: 105px;
+    min-width: 70px;
+}
+
+.info-trata{
+    color: #2a363b;
+    font-size: .6em;
+    line-height: 1.3;    
+    padding: 10px 10px;
+}
+
+.boton-trata{
+    color: #0ca9cc;
+    width: 180px;
+    height: 40px;
+    background-color: transparent;
+    border: 3px solid #0ca9cc;
+    border-radius: 45px;
+    font-size: .72em;
+    margin: 15px 0 0;
+    padding: 0 10px;
+    transition: background-color .6s, color .6s;
+}
+
+.boton-trata:hover{
+    background-color: #0ca9cc;
+    color: #fff;
+}
+
+
+
+/** CONTACTO **/
+
+.contacto{
+    background-color: #f3f3f3;
+}
+
+.contenedor-contacto{
+     background-color: #f3f3f3;
+}
+
+.cards-contacto{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-content: flex-start;
+    font-size: 22px;
+}
+
+
+.cards div:first-child{
+    grid-column: 2 / 3;
+}
+
+ .cards div:nth-child(2){
+    grid-column: 3 / 4;
+}
+
+.cards div:nth-child(3){
+    grid-column: 4 / 5;
+}
+
+.cards div:last-child{
+    grid-column: 5 / 6;
+}
+
+
+
+.cards{
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: #787878  5px 5px 15px 0;
+    border-radius: 10px;
+    transition: transform .5s, box-shadow .5s;
+    text-align: center;
+    margin: 10px 15px 20px;
+}
+
+.cards img{
+    width: 90px;
+}
+
+
+.cards:hover{
+    transform: translateY(-5%);
+}
+
+
+
+.contact-contenido h4{
+    color: #0ca9cc;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.contact-contenido p{
+    color: #2a363b;
+    text-align: center;
+    font-size: .81em;
+}
+
+/** Footer **/
+
+
+footer{
+    background-color: #141414;
+    padding-bottom: 0.1px;
+    width: 100%;
+    height: 235px;
+}
+
+.contenedor-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    color: #fff;
+}
+
+.frases{
+    margin: 10px 25px;
+}
+
+.frases h2{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.frases span{
+    color: #aaa;
+    margin-top: 10px;
+}
+
+.img-redes{
+    width: 40px;
+    line-height: 60px;
+}
+
+.redes a:first-child,
+.redes a:last-child{
+    width: 60px;
+    height: 60px;
+    background-color: #141414;
+    text-align: center;
+    border-radius: 50%;
+    padding-top: 9px;
+    border: 1px solid #fff;
+    margin: 0 10px;
+    transition: background-color .5s;
+
+}
+
+.redes{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.redes a:hover:first-child,
+.redes a:hover:last-child{
+    background-color: rgba(0, 251, 243, 0.8);
+}
+
+.line{
+    width: 100vw;
+    height: 2px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+
+/** ICONO DEL MENU **/
+
+
+.icono-menu{
+    display: none;
+    
+}
+
+.icono-menu img{
+    width: 30px;
+}
+.fas{
+    color: #0ca9cc;
+    text-align: center;
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+
+
+/** RESPONSIVE  **/
+
+@media screen and (max-width: 1075px){
+    header .menu{
+        height: 100px;
+        grid-template-rows: repeat(2, 1fr);
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .icono-menu{
+        display: grid;
+        grid-column: 13 / 14;
+        align-content: center;
+        margin:0 30px;
+    }
+
+    .active{
+        transform: translateY(-500%) ;
+    }
+
+    .lista-menu{
+        flex-direction: column;
+        width: 100%;
+        grid-row: 2 / 3;
+        grid-column: 1 / 14;
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    .logo{
+        width: 250px;
+    }
+
+    .menu-lista{
+        padding: 15px 0;
+    }
+    
+    .sub-menu{
+        position: static;
+        background-color: #fff;
+        visibility: visible;
+        display: none; 
+        opacity: 1;
+        padding-left :5px ;
+        width: 0px;
+}
+
+    .sub{
+        display: block;
+}
+
+    .menu-lista::after,
+    .sub-item::after{
+            display: none;
+}
+
+/** iMAGEN DE FONDO Y TEXTO **/
+
+    .contenedor-texto{
+        left: 5%;
+    }   
+
+    .texto{
+        font-size: 33px
+    }
+
+    .sub-texto{
+        font-size: 16px;
+        color: #aaa;
+    }
+
+    /** Sobre Nostros **/
+    .titulo-seccion{
+        font-size: 40px;
+    }
+
+    .contenedor-nosotros{
+        grid-template-columns: repeat(8,  130px);
+        gap: 10px;
+    }
+
+    .card-1 img,
+    .card-2 img{
+        width: 60px;
+    }
+
+    .card-1{
+        grid-column: 2 / 5;
+    }
+    
+    .card-2{
+        grid-column: 5 / 8;
+    }   
+    .objetivo,
+    .equipo{
+        font-size: 25px;
+}
+
+    .descrpcion{
+       max-width: 100%;
+       font-size: 16px;
+}
+
+    .nostros-principal{
+        margin: 10px 0;
+        font-size: 20px;
+    }
+
+    /** Que ofrecemos **/
+
+ .ofrecemos{
+    height: 70vh;
+    background-position: center right;
+    flex-direction: column;
+} 
+
+/** TRATAMIENTOS **/
+
+    .contenedor-trata{
+        font-size: 22px;
+    }
+
+    .img-trata{
+        width: 90px;
+        min-width: 70px;
+    }
+
+    .boton-trata{
+        width: 150px;
+    }
+    
+/** CONTACTO **/
+.cards-contacto{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-content: flex-start;
+    font-size: 18px;
+}
+
+.frases h2{
+    font-size: 17px;
+}
+
+.img-redes{
+    width: 30px;
+    line-height: 50px;
+}
+
+.redes a:first-child,
+.redes a:last-child{
+    width: 50px;
+    height: 50px;
+}
+
+.redes{
+    margin-right: 70px;
+}
+}
+
+@media screen and (max-width: 900px){
+    .logo{
+        width: 200px;
+    }
+
+    header .menu{
+        height: 70px;
+    }
+
+    .texto{
+        font-size: 27px
+    }
+
+    .sub-texto{
+        font-size: 14px;
+    }
+
+    /** NOSOTROS **/
+
+    .titulo-seccion{
+        font-size: 30px;
+    }
+
+    .contenedor-nosotros{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-1 img,
+    .card-2 img{
+        width: 50px;
+    }
+
+    .objetivo,
+    .equipo{
+        font-size: 20px;
+}
+
+    .descrpcion{
+       font-size: 14px;
+}
+
+    .nostros-principal{
+        font-size: 18px;
+    }
+
+
+/** TRATAMIENTOS **/ 
+.contenedor-trata{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #f3f3f3;
+    gap: 20px;
+    font-size: 20 px;
+}
+
+.contenedor-trata div:first-child,
+.contenedor-trata div:nth-child(5){
+grid-column: 1 / 3;
+}
+
+
+.contenedor-trata div:nth-child(2),
+.contenedor-trata div:last-child,
+.contenedor-trata div:nth-child(4){
+grid-column: 3 / 5;
+}
+
+.contenedor-trata div:nth-child(3){
+grid-column: 1 / 3;
+}
+
+/** CARDS TRATAMIENTO **/
+
+.info-trata{
+    color: #2a363b;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 10px 10px;
+}
+
+/** CONTACTO **/
+
+.cards-contacto{
+    display: flex;
+    flex-direction: column;
+}
+
+/** FOOTER **/
+
+footer{
+    height: 265px;
+}
+
+.frases h2{
+    font-size: 15px;
+}
+
+.frases span{
+    font-size: 13px;
+}
+
+.redes a:first-child,
+.redes a:last-child{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.redes{
+    display: flex;
+
+}
+
+.line{
+    margin-top: 10px;
+
+}
+
+}
+
+@media screen and (max-width: 600px){
+
+    header .menu{
+        height: 70px;
+    }
+
+    .logo{
+        width: 200px;
+        margin-left: 10px;
+    }
+
+    .texto{
+        font-size: 18px
+    }
+
+    .sub-texto{
+        font-size: 13px;
+        line-height: 1.3;
+    }
+
+    .icono-menu img{
+        width: 25px;
+    }
+
+    /** OFRECEMOS **/
+
+    .ofrecemos{
+        background-position:  center right;
+        height: 100vh;
+    }
+/** Tratamientos **/
+
+.contenedor-trata{
+    display: flex;
+    flex-direction: column;
+}
+
+.nostros-principal{
+    font-size: 15px;
+}
+
+/** FOOTER **/
+
+footer{
+    height: 265px;
+}
+
+.frases h2{
+    font-size: 15px;
+    max-width: 50%;
+    letter-spacing: 0px;
+}
+
+.frases span{
+    font-size: 13px;
+}
+
+.redes a:first-child,
+.redes a:last-child{
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.redes{
+    display: flex;
+    margin: 0 20px ;
+}
+
+.line{
+    margin-top: -15px;
+
+}
+
+}
